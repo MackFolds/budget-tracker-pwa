@@ -88,7 +88,6 @@ self.addEventListener('fetch', (event) => {
                         if (response) {
                             return response;
                         } else if (event.request.headers.get('accept').includes('text/html')) {
-                            // return cached page
                             return caches.match(event.request.url);
                         }
                     })
